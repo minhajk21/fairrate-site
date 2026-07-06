@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — FairRate</title>
+<meta name="description" content="How FairRate builds commercial payer rate benchmarks: sources, filters, deduplication, the Medicare baseline, and the data-quality decisions behind every number.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site"><div class="wrap">
+  <a class="brand" href="/">Fair<em>Rate</em></a>
+  <span class="spacer"></span>
+  <a class="nl" href="/">Home</a>
+  <a class="nl" href="data.html">The Data</a>
+  <a class="nl on" href="methodology.html">Methodology</a>
+  <a class="nl" href="packet.html">The Packet</a>
+</div></nav>
+
+<header class="page-hero"><div class="wrap">
+  <div class="kicker">Methodology</div>
+  <h1>Every number, traceable to a public filing.</h1>
+  <p>Rate benchmarking is only as good as the data hygiene behind it. Here is exactly how a
+  raw disclosure file becomes a defensible market percentile — including the pitfalls we
+  correct for that a naive read would miss.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2 class="sec">Sources</h2>
+  <dl class="defs">
+    <div class="def"><dt>Payer in-network files</dt><dd>The federal Transparency-in-Coverage
+      disclosures. For each payer we take the flagship commercial network and read the
+      professional negotiated rates by tax ID, NPI, and billing code. These are multi-gigabyte
+      compressed files; we stream them rather than loading them, and refresh monthly as payers
+      republish.</dd></div>
+    <div class="def"><dt>Hospital price transparency</dt><dd>Hospital machine-readable files
+      under 45 CFR 180. The 2026 format adds actual-paid medians and percentiles derived from
+      remittance data, plus claim counts — used to validate negotiated rates and confirm real
+      billing volume behind them.</dd></div>
+    <div class="def"><dt>Medicare Physician Fee Schedule</dt><dd>The final CY2026 PFS, computed
+      at the Texas / Dallas locality (carrier 04412, locality 11) from the national relative
+      value file and Dallas geographic indices. This is the reference every commercial contract
+      is quoted against.</dd></div>
+    <div class="def"><dt>NPPES registry</dt><dd>The national NPI registry, used to restrict
+      every benchmark to physicians carrying the relevant specialty taxonomy and practicing in
+      the target metro's counties.</dd></div>
+  </dl>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2 class="sec">From raw file to benchmark</h2>
+  <p class="sub">The filters and transforms applied to every rate, in order.</p>
+  <ul class="checks">
+    <li><strong>Professional fees only.</strong> Institutional and facility-side line items are
+      excluded; a practice negotiates its professional fee schedule, so that is what we benchmark.</li>
+    <li><strong>Place of service is respected.</strong> Procedure codes are benchmarked in the
+      setting they are actually performed (ambulatory surgery / hospital outpatient); office
+      visits are benchmarked at POS 11. The Medicare comparison is matched to the same setting.</li>
+    <li><strong>Specialty and geography.</strong> Rates are kept only for NPIs with the relevant
+      taxonomy in the target counties, filtering out unrelated providers who happen to appear in
+      a group's filing.</li>
+    <li><strong>Deduplication.</strong> Identical tax-ID &times; rate observations are collapsed
+      so a single contract published across many plan files counts once, not hundreds of times.</li>
+    <li><strong>Percentiles, not averages.</strong> Each code &times; payer is summarized as the
+      10th / 50th / 90th percentile of surviving rates — robust to outliers in a way a mean is not.</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">The corrections that matter</h2>
+  <p class="sub">Real disclosure files are messy in specific, repeatable ways. Reading them
+  naively produces confident, wrong numbers. Three we explicitly correct for:</p>
+  <div class="cols2">
+    <div>
+      <h3>Out-of-market contamination</h3>
+      <p style="color:#3A4048;font-size:15px">National payer files list a group's rate if
+      <em>any</em> one of its NPIs matches the target — which pulls in out-of-state contracts held
+      by large multi-market groups. We require meaningful local overlap before a rate counts toward
+      a metro benchmark, so a Texas number reflects Texas practices.</p>
+    </div>
+    <div>
+      <h3>Per-modifier fractional rows</h3>
+      <p style="color:#3A4048;font-size:15px">At least one major payer publishes the same procedure
+      as separate rows for each billing modifier — discontinued, reduced, or split-care versions,
+      each a fraction of the full fee. Left in, they collapse a median toward zero. We benchmark the
+      full unmodified professional fee.</p>
+    </div>
+    <div>
+      <h3>Ghost rates</h3>
+      <p style="color:#3A4048;font-size:15px">A file may list a rate for a tax ID that never bills
+      the code. We cross-reference the specialty registry and, where available, hospital claim-count
+      disclosures to keep the benchmark grounded in rates that reflect real billing.</p>
+    </div>
+    <div>
+      <h3>Scale and freshness</h3>
+      <p style="color:#3A4048;font-size:15px">Because the files run to gigabytes and change monthly,
+      the pipeline is built to re-run cleanly on each refresh — so a benchmark reflects the current
+      published contracts, not a stale one-time snapshot.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2 class="sec">Questions we get</h2>
+  <details><summary>Is any of this private or patient data?</summary>
+    <p>No. Every input is a public disclosure a payer or hospital is legally required to publish.
+    There is no claims data, no remittance detail tied to individuals, and nothing that touches
+    protected health information.</p></details>
+  <details><summary>How current are the figures?</summary>
+    <p>Payers republish their in-network files monthly. Benchmarks are rebuilt against the latest
+    files each cycle, so a packet reflects the contracts in force at the time it is produced.</p></details>
+  <details><summary>Why gastroenterology first?</summary>
+    <p>Procedure-heavy specialties concentrate revenue in a small set of codes, so a compact
+    benchmark covers most of the book — and their procedures occur in settings where hospital
+    disclosures provide an independent cross-check. Ophthalmology is next.</p></details>
+  <details><summary>Can you benchmark my specialty or metro?</summary>
+    <p>The pipeline generalizes to any specialty and market where the disclosures exist.
+    <a href="mailto:hello@fair-rate.com?subject=Benchmark%20request">Tell us what you need.</a></p></details>
+</div></section>
+
+<footer class="site"><div class="wrap">
+  <a class="brand" href="/">Fair<em>Rate</em></a>
+  <div class="cols2">
+    <div><p>Commercial payer rate intelligence for independent physician practices in the
+      Dallas–Fort Worth metro. All statistics derive from public disclosures mandated by the
+      federal Transparency in Coverage rule and 45 CFR 180.</p></div>
+    <div><p><a href="data.html">The Data</a> · <a href="methodology.html">Methodology</a> ·
+      <a href="packet.html">The Packet</a><br><a href="mailto:hello@fair-rate.com">hello@fair-rate.com</a></p>
+      <p style="margin-top:14px">FairRate is independent and unaffiliated with any payer or
+      health system. Benchmarks are market information, not legal, medical, or contracting advice.
+      &copy; 2026 FairRate.</p></div>
+  </div>
+</div></footer>
+
+</body>
+</html>
