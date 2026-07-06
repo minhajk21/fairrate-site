@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FairRate — Payer rate benchmarks for independent DFW practices</title>
+<meta name="description" content="Know what payers actually pay. Rate benchmarks for independent DFW physician practices, built from federally mandated price-transparency disclosures.">
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; }
+body { background:#FCFCFA; color:#16211C; font:16px/1.6 -apple-system,'Helvetica Neue',Segoe UI,sans-serif; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+header.site { padding: 26px 0; border-bottom: 1px solid #DDE2DC; }
+.brand { font-weight: 700; letter-spacing: -.01em; font-size: 19px; }
+.brand span { color:#1E6E5A; }
+.hero { padding: 72px 0 56px; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #5B6660; margin-bottom: 14px; }
+h1 { font-size: 42px; line-height: 1.15; font-weight: 650; letter-spacing: -.015em; max-width: 640px; }
+.hero p.lede { margin-top: 18px; font-size: 19px; color: #3A453F; max-width: 620px; }
+.stats { display: flex; gap: 0; border: 1px solid #DDE2DC; border-radius: 8px; overflow: hidden; margin: 44px 0 0; flex-wrap: wrap; }
+.stat { flex: 1 1 200px; padding: 20px 22px; border-right: 1px solid #DDE2DC; background: #fff; }
+.stat:last-child { border-right: none; }
+.stat .v { font-size: 26px; font-weight: 650; }
+.stat .l { font-size: 13px; color: #5B6660; margin-top: 2px; }
+section { padding: 52px 0; border-top: 1px solid #DDE2DC; }
+h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 650; color: #1E6E5A; margin-bottom: 18px; }
+h3 { font-size: 24px; font-weight: 650; letter-spacing: -.01em; margin-bottom: 12px; }
+p + p { margin-top: 12px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 720px) { .cols { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+ul.checks { list-style: none; margin-top: 14px; }
+ul.checks li { padding-left: 26px; position: relative; margin-bottom: 10px; }
+ul.checks li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 8px; height: 8px; background: #1E6E5A; transform: rotate(45deg); }
+.card { background: #fff; border: 1px solid #DDE2DC; border-radius: 10px; padding: 30px; }
+.price { font-size: 34px; font-weight: 700; }
+.price small { font-size: 15px; font-weight: 400; color: #5B6660; }
+.btn { display: inline-block; margin-top: 18px; background: #16211C; color: #FCFCFA; padding: 13px 26px; border-radius: 7px; text-decoration: none; font-weight: 600; font-size: 15px; }
+.btn:hover { background: #1E6E5A; }
+.btn.ghost { background: transparent; color: #16211C; border: 1.5px solid #16211C; }
+.btn.ghost:hover { color: #1E6E5A; border-color: #1E6E5A; background: transparent; }
+.fine { font-size: 13.5px; color: #5B6660; margin-top: 12px; }
+.mono { font-variant-numeric: tabular-nums; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; margin-top: 16px; background:#fff; }
+th { text-align: right; padding: 9px 12px; border-bottom: 2px solid #16211C; font-size: 12.5px; }
+td { text-align: right; padding: 9px 12px; border-bottom: 1px solid #DDE2DC; font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child { text-align: left; }
+footer.site { padding: 36px 0 60px; border-top: 1px solid #DDE2DC; font-size: 13px; color: #5B6660; }
+a { color: #1E6E5A; }
+</style>
+</head>
+<body>
+
+<header class="site"><div class="wrap">
+  <div class="brand">Fair<span>Rate</span></div>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">Payer rate intelligence · Dallas–Fort Worth</div>
+  <h1>Know what payers actually pay — before your next contract renewal.</h1>
+  <p class="lede">Federal transparency rules force every commercial payer to publish
+  every rate they've negotiated, with every practice. FairRate turns those
+  disclosures into negotiation-ready benchmarks for independent physician
+  practices.</p>
+  <div class="stats">
+    <div class="stat"><div class="v mono">5</div><div class="l">major DFW commercial payers benchmarked</div></div>
+    <div class="stat"><div class="v mono">2.5&times;</div><div class="l">spread in median colonoscopy rates across payers, same metro</div></div>
+    <div class="stat"><div class="v mono">30,000+</div><div class="l">disclosed rate observations, refreshed monthly</div></div>
+  </div>
+</div></div>
+
+<section><div class="wrap cols">
+  <div>
+    <h2>The problem</h2>
+    <h3>Most independent groups have never seen the other side's numbers.</h3>
+    <p>Rates for the same procedure, in the same metro, routinely differ by
+    2&times; or more between payers — and between practices on the same payer.
+    A practice that has never benchmarked can't know which end of that spread
+    it's on. Payers know. Now the data to level that asymmetry is public —
+    if you can process multi-gigabyte disclosure files.</p>
+  </div>
+  <div>
+    <h2>The data</h2>
+    <h3>Built only from public, federally mandated disclosures.</h3>
+    <ul class="checks">
+      <li>Payer Transparency-in-Coverage files: negotiated professional rates, per practice, per code</li>
+      <li>Hospital price-transparency files (2026 fields): what payers <em>actually paid</em>, from remittance data</li>
+      <li>CMS Physician Fee Schedule: the CY2026 Dallas-locality Medicare baseline</li>
+      <li>No claims data, no patient data — nothing that touches PHI</li>
+    </ul>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>The pilot offer</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Practice Benchmark Packet</h3>
+      <div class="price">$199 <small>one-time · refunded if it isn't useful</small></div>
+      <p style="margin-top:14px">For DFW gastroenterology practices (ophthalmology next):</p>
+      <ul class="checks">
+        <li>Your top 12 codes vs the disclosed market 10th / 50th / 90th percentile — per payer</li>
+        <li>Your position vs the CY2026 Medicare Dallas baseline, matched to your place of service</li>
+        <li>Facility-side actual-paid context from hospital disclosures</li>
+        <li>A negotiation-ready summary letter you can send at renewal</li>
+      </ul>
+      <a class="btn" href="https://buy.stripe.com/9B69AM9zvcLVguZasfeQM00">Get your packet — $199</a>
+      <div class="fine">Limited pilot: 10 packets, hand-produced. Full refund if you don't find it useful.</div>
+    </div>
+    <div>
+      <h3>Want proof first?</h3>
+      <p>Ask for the free <strong>DFW GI Market Rate Benchmark</strong> — a
+      one-page standardized snapshot of what the five major commercial payers
+      disclose paying DFW gastroenterology groups, without any
+      practice-specific data.</p>
+      <a class="btn ghost" href="mailto:minhaj@fair-rate.com?subject=Send%20me%20the%20DFW%20GI%20benchmark">Request the free benchmark</a>
+      <p class="fine">One email, no list, no follow-up sequence.</p>
+      <table>
+        <tr><th>Code</th><th>Service</th><th>Payer spread (median)</th></tr>
+        <tr><td class="mono">45378</td><td style="text-align:left">Colonoscopy, diagnostic</td><td class="mono">$199 – $384</td></tr>
+        <tr><td class="mono">43239</td><td style="text-align:left">Upper GI endoscopy w/ biopsy</td><td class="mono">$187 – $396</td></tr>
+        <tr><td class="mono">99214</td><td style="text-align:left">Established patient visit</td><td class="mono">$112 – $134</td></tr>
+      </table>
+      <div class="fine">Median disclosed professional rates across the five networks benchmarked, June–July 2026 files.</div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap cols">
+  <div>
+    <h2>Methodology</h2>
+    <p>Professional-billing negotiated rates from payer in-network files
+    (flagship commercial network per payer), restricted to
+    gastroenterology-taxonomy NPIs practicing in DFW-metro counties via the
+    NPPES registry, deduplicated by tax ID and rate, and reported as
+    percentiles per code and payer. Medicare comparisons use the final CY2026
+    Physician Fee Schedule, Dallas locality, matched to the place of service
+    each rate is published for.</p>
+  </div>
+  <div>
+    <h2>Who's behind this</h2>
+    <p>FairRate is built by <strong>Minhaj Khan</strong>. I build data tools;
+    this one exists because the transparency rules created a public dataset
+    almost nobody has made usable for the independent practices it's supposed
+    to empower.</p>
+    <p>Questions, skepticism, or a sample request:
+    <a href="mailto:minhaj@fair-rate.com">minhaj@fair-rate.com</a></p>
+  </div>
+</div></section>
+
+<footer class="site"><div class="wrap">
+  © 2026 FairRate · Dallas–Fort Worth · All statistics derive from public
+  disclosures mandated by the federal Transparency in Coverage rule and 45
+  CFR 180. FairRate is independent and unaffiliated with any payer or health
+  system. Benchmarks are market information, not legal, medical, or
+  contracting advice.
+</div></footer>
+
+</body>
+</html>
