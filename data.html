@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Data — FairRate</title>
-<meta name="description" content="What the commercial payer disclosures reveal about DFW gastroenterology rates: the payer spread, the within-payer range, and where the numbers come from.">
+<meta name="description" content="What the commercial insurer disclosures reveal about DFW gastroenterology rates: the insurer spread, the within-insurer range, and where the numbers come from.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,15 +22,15 @@
   <div class="kicker">The Data</div>
   <h1>What the disclosures actually reveal.</h1>
   <p>A standing snapshot of the DFW gastroenterology market, built from the five major
-  commercial payers' public in-network files. These are market statistics only — no
+  commercial insurers' public in-network files. These are market statistics only — no
   practice-specific data appears here.</p>
 </div></header>
 
 <section><div class="wrap">
-  <h2 class="sec">The payer spread</h2>
+  <h2 class="sec">The insurer spread</h2>
   <p class="sub">Median disclosed professional rate for the highest-volume GI procedures,
-  by payer. The distance between the columns is money left on the table for a practice
-  anchored to the wrong payer.</p>
+  by insurer. The distance between the columns is money left on the table for a practice
+  anchored to the wrong insurer.</p>
   <div style="overflow-x:auto">
   <table class="ladder">
     <tr>
@@ -58,7 +58,7 @@
       <td class="r mono">$106</td><td class="r mono">$164</td><td class="r mono">$135</td></tr>
   </table>
   </div>
-  <p class="fine">Median of unique tax-ID &times; rate observations per code and payer, restricted
+  <p class="fine">Median of unique tax-ID &times; rate observations per code and insurer, restricted
   to gastroenterology-taxonomy NPIs practicing in DFW counties. Procedure rates are the
   facility-setting professional fee (ASC / hospital outpatient); the office visit is POS 11.
   Medicare is the final CY2026 Physician Fee Schedule, Dallas locality, matched to setting.
@@ -68,25 +68,25 @@
 <section class="alt"><div class="wrap">
   <div class="cols2">
     <div>
-      <h2 class="sec">The within-payer range is just as wide.</h2>
-      <p>The payer spread is only half the story. On a single payer, the gap between a
+      <h2 class="sec">The within-insurer range is just as wide.</h2>
+      <p>The insurer spread is only half the story. On a single insurer, the gap between a
       practice at the 10th percentile and one at the 90th routinely approaches
       <strong>2&times;</strong> for the same code. Two GI groups a few miles apart, same
       insurer, can be paid dramatically differently for an identical colonoscopy.</p>
-      <p>This is the number a practice can move. A group sitting near a payer's floor,
+      <p>This is the number a practice can move. A group sitting near an insurer's floor,
       holding documented evidence of the disclosed median, has a concrete, data-backed
       case for parity at renewal.</p>
     </div>
     <div class="card">
       <div class="kicker" style="color:var(--amber)">Cigna · CPT 45378 · disclosed distribution</div>
-      <h3 style="margin-top:6px">Same payer, same code, DFW</h3>
+      <h3 style="margin-top:6px">Same insurer, same code, DFW</h3>
       <table class="ladder" style="border:none">
         <tr><td>10th percentile group</td><td class="r mono">$210</td></tr>
         <tr><td>Median group</td><td class="r mono">$273</td></tr>
         <tr><td>90th percentile group</td><td class="r mono">$444</td></tr>
       </table>
       <p class="fine">A practice at the low end earns roughly 53% less than one at the high
-      end for the same procedure, on the same payer, in the same city.</p>
+      end for the same procedure, with the same insurer, in the same city.</p>
     </div>
   </div>
 </div></section>
@@ -98,21 +98,21 @@
   <div class="cols3">
     <div class="step">
       <div class="n">SOURCE 01</div>
-      <h3>Payer in-network files</h3>
+      <h3>Insurer in-network files</h3>
       <p>The Transparency-in-Coverage disclosures — negotiated professional rates by
       tax ID and NPI, per code. The primary source, published monthly by each insurer.</p>
     </div>
     <div class="step">
       <div class="n">SOURCE 02</div>
       <h3>Hospital price transparency</h3>
-      <p>2026 hospital files add what payers <em>actually paid</em>, drawn from remittance
+      <p>2026 hospital files add what insurers <em>actually paid</em>, drawn from remittance
       data, with claim counts — a cross-check on the negotiated rates and their real volume.</p>
     </div>
     <div class="step">
       <div class="n">SOURCE 03</div>
       <h3>Medicare fee schedule</h3>
       <p>The CY2026 Physician Fee Schedule at the Dallas locality — the neutral yardstick
-      every payer contract is quoted against.</p>
+      every insurer contract is quoted against.</p>
     </div>
   </div>
   <p style="margin-top:32px"><a class="btn dline" href="methodology.html">Read the full methodology &rarr;</a></p>
@@ -121,12 +121,12 @@
 <footer class="site"><div class="wrap">
   <a class="brand" href="/">Fair<em>Rate</em></a>
   <div class="cols2">
-    <div><p>Commercial payer rate intelligence for independent physician practices in the
+    <div><p>Commercial insurer rate intelligence for independent physician practices in the
       Dallas–Fort Worth metro. All statistics derive from public disclosures mandated by the
       federal Transparency in Coverage rule and 45 CFR 180.</p></div>
     <div><p><a href="data.html">The Data</a> · <a href="methodology.html">Methodology</a> ·
       <a href="packet.html">The Packet</a><br><a href="mailto:hello@fair-rate.com">hello@fair-rate.com</a></p>
-      <p style="margin-top:14px">FairRate is independent and unaffiliated with any payer or
+      <p style="margin-top:14px">FairRate is independent and unaffiliated with any insurer or
       health system. Benchmarks are market information, not legal, medical, or contracting advice.
       &copy; 2026 FairRate.</p></div>
   </div>
