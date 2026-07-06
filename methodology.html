@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Methodology — FairRate</title>
-<meta name="description" content="How FairRate builds commercial payer rate benchmarks: sources, filters, deduplication, the Medicare baseline, and the data-quality decisions behind every number.">
+<meta name="description" content="How FairRate builds commercial insurer rate benchmarks: sources, filters, deduplication, the Medicare baseline, and the data-quality decisions behind every number.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,10 +29,10 @@
 <section><div class="wrap">
   <h2 class="sec">Sources</h2>
   <dl class="defs">
-    <div class="def"><dt>Payer in-network files</dt><dd>The federal Transparency-in-Coverage
-      disclosures. For each payer we take the flagship commercial network and read the
+    <div class="def"><dt>Insurer in-network files</dt><dd>The federal Transparency-in-Coverage
+      disclosures. For each insurer we take the flagship commercial network and read the
       professional negotiated rates by tax ID, NPI, and billing code. These are multi-gigabyte
-      compressed files; we stream them rather than loading them, and refresh monthly as payers
+      compressed files; we stream them rather than loading them, and refresh monthly as insurers
       republish.</dd></div>
     <div class="def"><dt>Hospital price transparency</dt><dd>Hospital machine-readable files
       under 45 CFR 180. The 2026 format adds actual-paid medians and percentiles derived from
@@ -62,7 +62,7 @@
       a group's filing.</li>
     <li><strong>Deduplication.</strong> Identical tax-ID &times; rate observations are collapsed
       so a single contract published across many plan files counts once, not hundreds of times.</li>
-    <li><strong>Percentiles, not averages.</strong> Each code &times; payer is summarized as the
+    <li><strong>Percentiles, not averages.</strong> Each code &times; insurer is summarized as the
       10th / 50th / 90th percentile of surviving rates — robust to outliers in a way a mean is not.</li>
   </ul>
 </div></section>
@@ -74,14 +74,14 @@
   <div class="cols2">
     <div>
       <h3>Out-of-market contamination</h3>
-      <p style="color:#3A4048;font-size:15px">National payer files list a group's rate if
+      <p style="color:#3A4048;font-size:15px">National insurer files list a group's rate if
       <em>any</em> one of its NPIs matches the target — which pulls in out-of-state contracts held
       by large multi-market groups. We require meaningful local overlap before a rate counts toward
       a metro benchmark, so a Texas number reflects Texas practices.</p>
     </div>
     <div>
       <h3>Per-modifier fractional rows</h3>
-      <p style="color:#3A4048;font-size:15px">At least one major payer publishes the same procedure
+      <p style="color:#3A4048;font-size:15px">At least one major insurer publishes the same procedure
       as separate rows for each billing modifier — discontinued, reduced, or split-care versions,
       each a fraction of the full fee. Left in, they collapse a median toward zero. We benchmark the
       full unmodified professional fee.</p>
@@ -104,11 +104,11 @@
 <section class="alt"><div class="wrap">
   <h2 class="sec">Questions we get</h2>
   <details><summary>Is any of this private or patient data?</summary>
-    <p>No. Every input is a public disclosure a payer or hospital is legally required to publish.
+    <p>No. Every input is a public disclosure an insurer or hospital is legally required to publish.
     There is no claims data, no remittance detail tied to individuals, and nothing that touches
     protected health information.</p></details>
   <details><summary>How current are the figures?</summary>
-    <p>Payers republish their in-network files monthly. Benchmarks are rebuilt against the latest
+    <p>Insurers republish their in-network files monthly. Benchmarks are rebuilt against the latest
     files each cycle, so a packet reflects the contracts in force at the time it is produced.</p></details>
   <details><summary>Why gastroenterology first?</summary>
     <p>Procedure-heavy specialties concentrate revenue in a small set of codes, so a compact
@@ -122,12 +122,12 @@
 <footer class="site"><div class="wrap">
   <a class="brand" href="/">Fair<em>Rate</em></a>
   <div class="cols2">
-    <div><p>Commercial payer rate intelligence for independent physician practices in the
+    <div><p>Commercial insurer rate intelligence for independent physician practices in the
       Dallas–Fort Worth metro. All statistics derive from public disclosures mandated by the
       federal Transparency in Coverage rule and 45 CFR 180.</p></div>
     <div><p><a href="data.html">The Data</a> · <a href="methodology.html">Methodology</a> ·
       <a href="packet.html">The Packet</a><br><a href="mailto:hello@fair-rate.com">hello@fair-rate.com</a></p>
-      <p style="margin-top:14px">FairRate is independent and unaffiliated with any payer or
+      <p style="margin-top:14px">FairRate is independent and unaffiliated with any insurer or
       health system. Benchmarks are market information, not legal, medical, or contracting advice.
       &copy; 2026 FairRate.</p></div>
   </div>
