@@ -19,7 +19,7 @@ body { background: var(--paper); color: var(--ink); font: 16.5px/1.65 var(--sans
 
 nav.site { background: var(--ink); color: var(--paper); position: sticky; top: 0; z-index: 10; }
 nav.site .wrap { display: flex; align-items: baseline; gap: 32px; padding: 18px 28px; }
-.brand { font: 700 20px var(--serif); color: var(--paper); text-decoration: none; }
+.brand { font: 700 27px var(--serif); color: var(--paper); text-decoration: none; }
 .brand em { font-style: normal; color: var(--amber-2); }
 nav.site .spacer { flex: 1; }
 nav.site a.nl { color: #B8C0CE; text-decoration: none; font-size: 13.5px; letter-spacing: .04em; }
