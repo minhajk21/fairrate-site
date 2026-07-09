@@ -30,7 +30,7 @@ nav.site a.nl:hover, nav.site a.nl.on { color: var(--amber-2); }
 .hero h1 { font: 600 52px/1.12 var(--serif); letter-spacing: -.01em; max-width: 720px; }
 .hero h1 .hl { color: var(--amber-2); }
 .hero p.lede { margin-top: 24px; font-size: 20px; line-height: 1.6; color: #C4CBD8; max-width: 640px; }
-.hero .actions { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; }
+.actions { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; }
 
 .page-hero { background: var(--ink); color: var(--paper); padding: 60px 0 52px; }
 .page-hero h1 { font: 600 40px/1.15 var(--serif); }
