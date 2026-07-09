@@ -59,10 +59,19 @@ h3 { font: 600 21px/1.3 var(--serif); margin: 26px 0 10px; }
 p + p { margin-top: 12px; }
 .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll-hint { display: none; font-size: 13px; color: var(--gray); margin-bottom: 10px; }
 @media (max-width: 760px) {
   .cols2, .cols3 { grid-template-columns: 1fr; }
   .hero h1 { font-size: 36px; } .page-hero h1 { font-size: 30px; }
-  nav.site .wrap { gap: 18px; flex-wrap: wrap; }
+  /* Nav: brand on its own line, links in a tidy row beneath */
+  nav.site .wrap { flex-wrap: wrap; gap: 12px 18px; align-items: center; padding-top: 15px; padding-bottom: 15px; }
+  nav.site .spacer { display: none; }
+  nav.site .brand { width: 100%; }
+  /* Stat band: stack full-width with top dividers instead of left borders */
+  .statband .stat { flex-basis: 100%; padding: 22px 0; }
+  .statband .stat + .stat { border-left: none; border-top: 1px solid var(--line-dark); padding-left: 0; }
+  .scroll-hint { display: block; }
 }
 
 .card { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 32px; }
