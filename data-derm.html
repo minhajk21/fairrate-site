@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Data — FairRate</title>
-<meta name="description" content="What the commercial insurer disclosures reveal about DFW gastroenterology rates: the insurer spread, the within-insurer range, and where the numbers come from.">
+<title>The Data · Dermatology — FairRate</title>
+<meta name="description" content="What the commercial insurer disclosures reveal about DFW dermatology rates: the insurer spread, the within-insurer range, and where the numbers come from.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,79 +19,74 @@
 </div></nav>
 
 <header class="page-hero"><div class="wrap">
-  <div class="kicker">The Data</div>
-  <h1>What the disclosures actually reveal.</h1>
+  <div class="kicker">The Data · Dermatology</div>
+  <h1>What the disclosures reveal for dermatology.</h1>
   <p>A standing snapshot of the DFW market, built from the five major commercial
   insurers' public in-network files. These are market statistics only — no
   practice-specific data appears here.</p>
   <div class="spec-picker">
-    <a class="on" href="data.html" aria-current="page">Gastroenterology</a>
+    <a href="data.html">Gastroenterology</a>
     <a href="data-ophtho.html">Ophthalmology</a>
-    <a href="data-derm.html">Dermatology</a>
+    <a class="on" aria-current="page" href="data-derm.html">Dermatology</a>
   </div>
 </div></header>
 
 <section><div class="wrap">
   <h2 class="sec">The insurer spread</h2>
-  <p class="sub">Median disclosed professional rate for the highest-volume GI procedures,
-  by insurer. The distance between the columns is money left on the table for a practice
-  anchored to the wrong insurer.</p>
+  <p class="sub">Median disclosed professional rate for the highest-volume dermatology procedures,
+  by insurer. The distance between the columns is money left on the table
+  for a practice anchored to the wrong insurer.</p>
   <p class="scroll-hint">Swipe the table sideways to see every insurer and Medicare &rarr;</p>
   <div class="scroll-x">
   <table class="ladder">
     <tr>
       <th>CPT</th><th>Procedure</th>
-      <th class="r">Cigna</th><th class="r">UHC</th><th class="r">BCBSTX</th>
-      <th class="r">Aetna</th><th class="r">BSW</th><th class="r">Medicare</th>
+      <th class="r">Cigna</th><th class="r">UHC</th><th class="r">BCBSTX</th><th class="r">Aetna</th><th class="r">BSW</th><th class="r">Medicare</th>
     </tr>
-    <tr><td class="mono">45378</td><td>Colonoscopy, diagnostic</td>
-      <td class="r mono">$273</td><td class="r mono">$252</td><td class="r mono">$229</td>
-      <td class="r mono">$232</td><td class="r mono">$203</td><td class="r mono">$164</td></tr>
-    <tr><td class="mono">45380</td><td>Colonoscopy with biopsy</td>
-      <td class="r mono">$296</td><td class="r mono">$292</td><td class="r mono">$249</td>
-      <td class="r mono">$279</td><td class="r mono">$264</td><td class="r mono">$177</td></tr>
-    <tr><td class="mono">45385</td><td>Colonoscopy with polypectomy</td>
-      <td class="r mono">$375</td><td class="r mono">$357</td><td class="r mono">$314</td>
-      <td class="r mono">$331</td><td class="r mono">$332</td><td class="r mono">$222</td></tr>
-    <tr><td class="mono">43239</td><td>Upper GI endoscopy with biopsy</td>
-      <td class="r mono">$188</td><td class="r mono">$194</td><td class="r mono">$172</td>
-      <td class="r mono">$184</td><td class="r mono">$149</td><td class="r mono">$123</td></tr>
-    <tr><td class="mono">43235</td><td>Upper GI endoscopy, diagnostic</td>
-      <td class="r mono">$167</td><td class="r mono">$169</td><td class="r mono">$153</td>
-      <td class="r mono">$156</td><td class="r mono">$132</td><td class="r mono">$110</td></tr>
-    <tr><td class="mono">99214</td><td>Established patient visit</td>
-      <td class="r mono">$128</td><td class="r mono">$124</td><td class="r mono">$119</td>
-      <td class="r mono">$106</td><td class="r mono">$164</td><td class="r mono">$135</td></tr>
+    <tr><td class="mono">17311</td><td>Mohs surgery, head/neck/hands/feet, first stage</td>
+      <td class="r mono">$752</td><td class="r mono">$748</td><td class="r mono">$856</td><td class="r mono">$703</td><td class="r mono">$699</td><td class="r mono">$664</td></tr>
+    <tr><td class="mono">17312</td><td>Mohs surgery, each additional stage</td>
+      <td class="r mono">$456</td><td class="r mono">$449</td><td class="r mono">$517</td><td class="r mono">$419</td><td class="r mono">$441</td><td class="r mono">$401</td></tr>
+    <tr><td class="mono">11102</td><td>Skin biopsy, tangential, first lesion</td>
+      <td class="r mono">$111</td><td class="r mono">$113</td><td class="r mono">$124</td><td class="r mono">$107</td><td class="r mono">$106</td><td class="r mono">$95</td></tr>
+    <tr><td class="mono">11104</td><td>Skin biopsy, punch, first lesion</td>
+      <td class="r mono">$138</td><td class="r mono">$142</td><td class="r mono">$154</td><td class="r mono">$134</td><td class="r mono">$132</td><td class="r mono">$121</td></tr>
+    <tr><td class="mono">17000</td><td>Destruction premalignant lesion, first</td>
+      <td class="r mono">$75</td><td class="r mono">$73</td><td class="r mono">$86</td><td class="r mono">$84</td><td class="r mono">$73</td><td class="r mono">$66</td></tr>
+    <tr><td class="mono">11642</td><td>Excision malignant lesion, face/ears/lips, 1.1-2.0 cm</td>
+      <td class="r mono">$297</td><td class="r mono">$305</td><td class="r mono">$337</td><td class="r mono">$281</td><td class="r mono">—</td><td class="r mono">$266</td></tr>
   </table>
   </div>
   <p class="fine">Median of unique tax-ID &times; rate observations per code and insurer, restricted
-  to gastroenterology-taxonomy NPIs practicing in DFW counties. Procedure rates are the
-  facility-setting professional fee (ASC / hospital outpatient); the office visit is POS 11.
-  Medicare is the final CY2026 Physician Fee Schedule, Dallas locality, matched to setting.
-  Figures rounded; individual practice rates vary widely around each median — see below.</p>
+  to dermatology-taxonomy NPIs practicing in DFW counties. Surgical rates are the
+  facility-setting professional fee (ASC / hospital outpatient); exams and injections are
+  the office fee (POS 11). Medicare is the final CY2026 Physician Fee Schedule, Dallas
+  locality, matched to setting. Figures rounded; individual practice rates vary around
+  each median — see below. An em dash means that insurer does not publish the code in a
+  directly comparable form.</p>
 </div></section>
 
 <section class="alt"><div class="wrap">
   <div class="cols2">
     <div>
-      <h2 class="sec">The within-insurer range is just as wide.</h2>
+      <h2 class="sec">The within-insurer range is where the money is.</h2>
       <p>The insurer spread is only half the story. On a single insurer, the gap between a
-      practice at the 10th percentile and one at the 90th routinely approaches
-      <strong>2&times;</strong> for the same code. Two GI groups a few miles apart, same
-      insurer, can be paid dramatically differently for an identical colonoscopy.</p>
+      practice at the 10th percentile and one at the 90th reaches
+      <strong>2&times;</strong> on high-volume surgical codes. Two derm groups a few
+      miles apart, same insurer, can be paid very differently for an identical procedure.</p>
       <p>This is the number a practice can move. A group sitting near an insurer's floor,
       holding documented evidence of the disclosed median, has a concrete, data-backed
       case for parity at renewal.</p>
     </div>
     <div class="card">
-      <div class="kicker" style="color:var(--amber)">Cigna · CPT 45378 · disclosed distribution</div>
+      <div class="kicker" style="color:var(--amber)">BSW · CPT 17311 · disclosed distribution</div>
       <h3 style="margin-top:6px">Same insurer, same code, DFW</h3>
       <table class="ladder" style="border:none">
-        <tr><td>10th percentile group</td><td class="r mono">$210</td></tr>
-        <tr><td>Median group</td><td class="r mono">$273</td></tr>
-        <tr><td>90th percentile group</td><td class="r mono">$444</td></tr>
+        <tr><td>10th percentile group</td><td class="r mono">$365</td></tr>
+        <tr><td>Median group</td><td class="r mono">$699</td></tr>
+        <tr><td>90th percentile group</td><td class="r mono">$763</td></tr>
       </table>
-      <p class="fine">A practice at the low end earns roughly 53% less than one at the high
+      <p class="fine">A practice at the low end earns roughly 52% less than one at the high
       end for the same procedure, with the same insurer, in the same city.</p>
     </div>
   </div>
