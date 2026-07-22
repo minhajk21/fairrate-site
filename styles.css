@@ -111,8 +111,14 @@ footer.site .cols2 { gap: 40px; margin-top: 4px; }
 a { color: var(--amber); }
 .mono { font-variant-numeric: tabular-nums; }
 
-/* specialty picker — tab-style subnav on The Data pages */
-.spec-picker { display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
+/* specialty picker — metro-grouped subnav on The Data pages */
+.spec-picker-row { display: flex; align-items: center; gap: 16px;
+  margin-top: 12px; flex-wrap: wrap; }
+.spec-picker-row:first-of-type { margin-top: 30px; }
+.spec-picker-metro { font: 600 12px var(--sans); letter-spacing: .14em;
+  text-transform: uppercase; color: #8B95A7; flex: 0 0 175px; }
+@media (max-width: 760px) { .spec-picker-metro { flex-basis: 100%; } }
+.spec-picker { display: flex; gap: 10px; flex-wrap: wrap; }
 .spec-picker a { display: inline-block; padding: 10px 22px; border-radius: 4px;
   border: 1px solid #4A5568; color: #C4CBD8; text-decoration: none;
   font: 600 14px var(--sans); letter-spacing: .05em; text-transform: uppercase; }
